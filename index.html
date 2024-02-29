@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mike's Tip Calculator</title>
+</head>
+<body>
+  
+    
+    <div id="container">
+        <h1>Mike's Tip Calculator</h1>
+
+        <div id="tipcalculator">
+
+            <form>
+
+                <p>How Many People Are Splitting the Bill?</p>
+                <input type="text" id="peoplenumber" placeholder="Enter a number" size="13">
+
+                <p>What is the Bill Cost?</p>
+                <p id="special">$<input type="text" id="billcost" placeholder="0.00" size="6"></p>
+                
+                <p>Select a Tip Percentage:</p>
+                <select id="percentagetip">
+                    <option selected value="0">-- Choose an Option --</option>
+                    <option value="0.3">30&#37; &#45; Excellent</option>
+                    <option value="0.2">20&#37; &#45; Good</option>
+                    <option value="0.15">15&#37; &#45; Okay</option>
+                    <option value="0.1">10&#37; &#45; Bad</option>
+                    <option value="0.05">5&#37; &#45; Horrific</option>
+                </select>
+                <br><br>
+                <button type="button" id="calculate">Calculate</button>
+
+                <div id="output"></div>
+                <div id="errors"></div>
+
+            </form>
+
+        </div> <!-- end of tip calculator -->
+
+    </div> <!-- end of container div -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
