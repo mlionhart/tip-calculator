@@ -5,11 +5,11 @@ $(document).ready(function() {
     $("#errors").html("");
 
     // creating handles to user input values
-    var billCost = $("#billcost").val();
-    var peopleNum = $("#peoplenumber").val();
-    var tipPercentage = $("#percentagetip").val();
+    let billCost = $("#billcost").val();
+    let peopleNum = $("#peoplenumber").val();
+    let tipPercentage = $("#percentagetip").val();
 
-    var errors = $("#errors");
+    const errors = $("#errors");
     errorOutput = "";
 
     // Validation
@@ -44,7 +44,7 @@ $(document).ready(function() {
     } // end of validation
 
     // Calculate tip
-    var total = (billCost * tipPercentage) / peopleNum;
+    let total = (billCost * tipPercentage) / peopleNum;
     // round to two decimal places
     total = Math.round(total * 100) / 100;
     // next line allows two digits after decimal point
