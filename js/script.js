@@ -57,6 +57,10 @@ $(document).ready(function() {
     $("#output").html("<br>" + "<strong>" + "$" + total + " Tip" + "</strong>");
   }
 
+  $('#calculate').on('click', function() {
+    calculateTip();
+  });
+
   $("#billcost, #peoplenumber, #percentagetip").on("keypress", function (e) {
     if (e.which == 13) {
       e.preventDefault();
