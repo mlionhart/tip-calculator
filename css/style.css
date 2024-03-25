@@ -81,3 +81,9 @@ button {
 button:active {
     box-shadow: 4px 4px 7px 1px rgb(6, 15, 20);
 }
+
+@media (max-width: 600px) {
+  body {
+    width: 90vw;
+  }
+}
