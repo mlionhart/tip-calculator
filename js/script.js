@@ -1,19 +1,27 @@
 $(document).ready(function() {
-  function calculateTip() {
-    // clear dom outputs
-    $("#output").html("");
-    $("#errors").html("");
 
+  let errors = $("#errors");
+
+  $(':input').on('input', function() {
+    $(this).css("border", "");
+  })  
+
+  function calculateTip() {
     // creating handles to user input values
     let billCost = $("#billcost").val();
     let peopleNum = $("#peoplenumber").val();
     let tipPercentage = $("#percentagetip").val();
 
-    const errors = $("#errors");
-    errorOutput = "";
+    // clear dom outputs
+    $("#output").html("");
+    $("#errors").html("");
+    $("#billcost").css("border", "");
+    $("#peoplenumber").css("border", "");
+
+    let errorOutput = "";
 
     // Validation
-    if (billCost == 0 || "") {
+    if (billCost == 0 || billCost == "") {
       console.log(billCost);
       $("#output").css("display", "none");
       $("#errors").css("color", "red");
@@ -21,9 +29,10 @@ $(document).ready(function() {
       errorOutput +=
         "<br><br>" + "<strong>" + "Enter a valid bill amount" + "<strong>";
       errors.html(errorOutput);
+      return;
     }
 
-    if (peopleNum < 1 || "") {
+    if (peopleNum < 1 || peopleNum == "") {
       console.log(peopleNum);
       $("#output").css("display", "none");
       $("#errors").css("color", "red");
@@ -31,6 +40,7 @@ $(document).ready(function() {
       errorOutput +=
         "<br><br>" + "<strong>" + "Enter a valid number of people" + "<strong>";
       errors.html(errorOutput);
+      return;
     }
 
     if (tipPercentage == "0") {
@@ -41,6 +51,7 @@ $(document).ready(function() {
       errorOutput +=
         "<br><br>" + "<strong>" + "Select a valid tip percentage" + "<strong>";
       errors.html(errorOutput);
+      return;
     } // end of validation
 
     // Calculate tip
@@ -54,7 +65,9 @@ $(document).ready(function() {
     console.log("bill cost: " + billCost);
     // Display the tip
     $("#output").css("font-size", "24px");
+    $("#output").css("display", "block");
     $("#output").html("<br>" + "<strong>" + "$" + total + " Tip" + "</strong>");
+    console.log($("#output").html());
   }
 
   $('#calculate').on('click', function() {
